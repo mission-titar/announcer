@@ -1,0 +1,9 @@
+name: Main push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    uses: ./.github/workflows/verify.yml

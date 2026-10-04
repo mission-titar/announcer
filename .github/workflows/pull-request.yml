@@ -1,0 +1,8 @@
+name: Pull request
+
+on:
+  pull_request:
+
+jobs:
+  verify:
+    uses: ./.github/workflows/verify.yml

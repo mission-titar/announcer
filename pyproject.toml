@@ -1,0 +1,45 @@
+[project]
+name = "announcer"
+version = "0.1.0"
+description = "Diffuse un lost media Keroro Mission Titar VF retrouvé : .torrent public et archive.org"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "internetarchive>=5.11.1",
+    "torf>=4.3.1",
+    "tqdm>=4.70.1",
+]
+
+[project.scripts]
+announce = "announcer.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12,<0.13"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "PT", "PL"]
+pylint.max-args = 6
+per-file-ignores."tests/*" = ["PLR2004"]
+
+[tool.mypy]
+strict = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report=term-missing --cov-fail-under=100"
+
+[tool.coverage.run]
+source = ["announcer"]
+branch = true
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.10",
+    "types-tqdm>=4.70.0.20260906",
+]
