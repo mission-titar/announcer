@@ -12,7 +12,7 @@ uv run ruff check . && uv run ruff format .
 uv run mypy src tests                # mode strict
 ```
 
-Toute modification doit laisser ces quatre vérifications au vert : la CI (`.github/workflows/verify.yml`, appelé par `main-push.yml` et `pull-request.yml`) les exécute sur Python 3.12 et 3.14 à chaque push sur `main` et à chaque PR.
+Toute modification doit laisser ces quatre vérifications au vert : la CI (`.github/workflows/verify.yml`, appelé par `main-push.yml` et `pull-request.yml`) les exécute à chaque push sur `main` et à chaque PR.
 
 ## Architecture (ports & adapters)
 
